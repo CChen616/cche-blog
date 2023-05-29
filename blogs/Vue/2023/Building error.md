@@ -76,4 +76,22 @@ Node.js v18.16.0
 
 run `$env:NODE_OPTIONS="--openssl-legacy-provider"` in windows cmd
 
+or 
+
+Alter the "scripts" configuration in the package.json file.
+
+```json
+  //Befroe
+    "scripts": {
+    "dev": "vuepress dev . --open --host \"localhost\"",
+    "build": "vuepress build ."
+  },
+
+  //After
+    "scripts": {
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress dev . --open --host \"localhost\"",
+    "build": "vuepress build ."
+  }
+```
+
 
